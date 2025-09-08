@@ -1,16 +1,19 @@
 % $Header: svn+ssh://andre@crapman/home/junda/repos/andre/school/trunk/m/Chapter/stat/probability/prob.main.tex 303 2023-03-09 16:02:30Z andre $
 
+\newif\ifteacher
+\teachertrue
+% \teacherfalse
+
 %%aspectratio=1610;169;149;54;43(default);32
 % % \documentclass[fleqn,11pt,trans,aspectratio=169]{beamer}
 % % \documentclass[fleqn,11pt,article,aspectratio=43]{beamer}
 % % \documentclass[fleqn,11pt,handout,aspectratio=43]{beamer}
 % \documentclass[fleqn,11pt,trans,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue}]{beamer}
-% \documentclass[fleqn,11pt,beamer,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
-\documentclass[fleqn,11pt,handout,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
+\ifteacher\documentclass[fleqn,11pt,beamer,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
+\else \documentclass[fleqn,11pt,handout,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
+\fi
 \def\adVers{202509.v.0.01}
-\newif\ifteacher
-% \teachertrue
-\teacherfalse
+
 
 \newif\iflong
 

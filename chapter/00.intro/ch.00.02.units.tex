@@ -378,7 +378,7 @@
 %= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 %= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 % \iffalse
-\begin{frame}
+\ifteacher\begin{frame}
   \frametitle{Gr\"o\ss{}enordnungen}
   \framesubtitle{Prefixe und 10-er Potenzen}
   %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
@@ -410,84 +410,126 @@
   %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 \end{frame}
 %==============================================================================
+\else\begin{frame}
+  \frametitle{Gr\"o\ss{}enordnungen}
+  \framesubtitle{Prefixe und 10-er Potenzen}
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  \begin{block}{Prefixe}
+    \pause 
+    \begin{tabular}{@{}l*{4}{@{\,}l}@{}}
+      Name     & Symbol & Faktor       & 10-er       & Beispiel \tabularnewline
+      &&&                                Potenz      &  \tabularnewline\hline
+      \phantom{xxxxxxxxxxxxxx} & T      & 1\,000\,000\,000\,000 & $10^{12}$ & 1 TB = 1\,000\,000\,000\,000 B \tabularnewline
+      & G      & 1\,000\,000\,000 & $10^{9}$      & 1 GHz = 1\,000\,000\,000 Hz \tabularnewline
+      & M      & 1\,000\,000   & $10^{6}$            & 1 MW = 1\,000\,000 W \tabularnewline
+      & k      & 1\,000       & $10^3$            & 1 km = 1\,000 m \tabularnewline
+      & h      & 100         & $10^2$            & 1 hL = 100 L \tabularnewline
+      & da     & 10          & $10^1$            & 1 dag = 10 g \tabularnewline
+      Einheit &        & 1           & $10^0$            & 1 m = 1 m \tabularnewline
+      & d      & 0,1         & $10^{-1}$         & 1 dL = 0,1 L \tabularnewline
+      & c      & 0,01        & $10^{-2}$         & 1 cm = 0,01 m \tabularnewline
+      & m      & 0,001       & $10^{-3}$         & 1 mg = 0,001 g \tabularnewline
+      & $\mu$  & 0,000\,001  & $10^{-6}$         & 1 $\mu$s = 0,000\,001 s \tabularnewline
+      & n      & 0,000\,000\,001& $10^{-9}$      & 1 nm = 0,000\,000\,001 m \tabularnewline
+      & p      & 0,000\,000\,000\,001& $10^{-12}$& 1 pF = 0,000\,000\,000\,001 F \tabularnewline
+      % Femto    & f      & 0,000\,000\,000\,000\,001& $10^{-15}$& 1 fs = 0,000\,000\,000\,000\,001 s \tabularnewline
+      % Atto     & a      & 0,000\,000\,000\,000\,000\,001& $10^{-18}$& 1 aJ = 0,000\,000\,000\,000\,000\,000\,001 J \tabularnewline
+      % Zepto    & z      & 0,000\,000\,000\,000\,000\,000\,001& $10^{-21}$& 1 zW = 0,000\,000\,000\,000\,000\,000\,000\,000\,001 W \tabularnewline
+      % Yocto    & y      & 0,000\,000\,000\,000\,000\,000\,000\,000\,000\,001& $10^{-24}$& 1 yC = 0,000\,000\,000\,000\,000\,000\,000\,000\,000\,000\,000\,001 C \tabularnewline
+      \hline
+    \end{tabular}
+  \end{block} 
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+\end{frame}
+%==============================================================================
+\fi
 
 % \section{Intro}
-% \subsection*{Naturwissenschaftliche Arbeitsweisen}
+% \subsection*{\label{subsec0003.1_magnitude}Gr\"o\ss{}enordnungen}
 %= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 %= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 % \iffalse
 \begin{frame}
-  \frametitle{Naturwissenschaftliche Arbeitsweisen}
-  \framesubtitle{Vom Fallen}
+  \frametitle{Gr\"o\ss{}enordnungen}
+  \framesubtitle{Prefixe und 10-er Potenzen}
   %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-  
-  Lange Zeit glaubte man, dass schwere K\"orper schneller fallen als leichte.
-  Wie kann das \ifteacher{}widerlegt\else\fbox{\phantom{widerlegt}}\fi{}
-  oder \ifteacher{}best\"atigt\else\fbox{\phantom{best\"atigt}}\fi{} werden?
-  \pause
-  \visible<+->{
-    \begin{block}{Gedankenexperiment}
-      \parbox[t]{0.3\linewidth}{
-        \raisebox{\dimexpr-1.2\height+\ht\strutbox}{\includegraphics[width=0.98\linewidth]{./chapter/00.intro/pics/fallingStones.png}}\\
-        {\tiny \url{https://personal.lse.ac.uk/robert49/ebooks/philsciadventures/img/balls2.gif}}
-      }\hspace{\stretch{1}}\parbox[t]{0.69\linewidth}{
-       \begin{itemize}
-         \item<+-> \textbf{links}: Gro\ss{}er und kleiner Stein zusammen w\"urden
-           \ifteacher{}schneller\else\fbox{\phantom{schneller}}\fi{}
-           fallen (Aristoteles) als 
-         \item<+-> \textbf{mitte}: der gro\ss{}e Stein alleine fallen w\"urde.
-         \item <+-> \textbf{rechts}: der kleine Stein f\"allt laut Aristoteles
-           \ifteacher{}langsamer\else\fbox{\phantom{langsamer}}\fi{} als der
-           gro\ss{}e Stein, und w\"urde daher den gro\ss{}en Stein bremsen.
-       \end{itemize}
-      }
-      \visible<+->{Das f\"uhrt zu einem \adSTField[1]{Widerspruch} zu Aristoteles,
-      und veranlasste \adSTField[]{Galileo Galilei} zu der Annahme, dass
-      alle K\"orper \adSTField[]{gleichschnell} fallen.}
-    \end{block}
-  }
+  \begin{block}{Beispiele, \"Ubungen: Schreiben Sie als 10-er Potenz}
+    \pause
+    \parbox[t]{0.4\linewidth}{%%
+    \ifteacher\begin{tabular}{@{}l*{1}{@{\,}l}@{}}
+      a) & 3.7 Millionen Meter        \tabularnewline\pause
+      b) & 0.000\,045 Sekunden        \tabularnewline\pause
+      c) & 1.25 Nanogramm             \tabularnewline\pause
+      d) & 0.000\,000\,32 Meter       \tabularnewline\pause
+      e) & 0.075 Kilogramm            \tabularnewline\pause
+      f) & 0.000\,000\,000\,001 Gramm \tabularnewline\pause
+      g) & 2.5 Milliarden Meter       \tabularnewline\pause
+      h) & Zweihundertausend Gramm    \tabularnewline\pause
+      i) & Zw\"olf Tausendstel Meter  \tabularnewline\pause
+      j) & 6.63 Mm                    \tabularnewline
+    \end{tabular}
+    \else\rule[0pt]{0pt}{16\baselineskip}
+    \fi
+    }\pause%%
+    \parbox[t]{0.4\linewidth}{%%
+    \ifteacher\begin{tabular}{@{}l*{1}{@{\,}l}@{}}
+      a) & $3{,}7 \times 10^6$ m     \tabularnewline
+      b) & $4{,}5 \times 10^{-5}$ s  \tabularnewline
+      c) & $1{,}25 \times 10^{-9}$ g \tabularnewline
+      d) & $3{,}2 \times 10^{-7}$ m  \tabularnewline
+      e) & $7{,}5 \times 10^{-2}$ kg \tabularnewline
+      f) & $1 \times 10^{-12}$ g     \tabularnewline
+      g) & $2{,}5 \times 10^9$ m     \tabularnewline
+      h) & $2{,}0 \times 10^5$ g     \tabularnewline
+      i) & $1{,}2 \times 10^{-5}$ m  \tabularnewline
+      j) & $6{,}63 \times 10^6$ m    \tabularnewline
+    \end{tabular}\pause
+    \else\rule[0pt]{0pt}{7\baselineskip}
+    \fi
+    }\pause 
+  \end{block} 
   %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 \end{frame}
 %==============================================================================
 
 % \section{Intro}
-% \subsection*{Naturwissenschaftliche Arbeitsweisen}
+% \subsection*{\label{subsec0003.1_magnitude}Gr\"o\ss{}enordnungen}
 %= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 %= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 % \iffalse
 \begin{frame}
-  \frametitle{Naturwissenschaftliche Arbeitsweisen}
-  \framesubtitle{Das Experiment}
+  \frametitle{Gr\"o\ss{}enordnungen}
+  \framesubtitle{Prefixe und 10-er Potenzen}
   %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
-  \parbox[t]{0.3\linewidth}{
-    \raisebox{\dimexpr-1\height+\ht\strutbox}{%%
-      \includegraphics[width=0.75\linewidth]{./chapter/00.intro/pics/Galileo_Galilei01.png}}\\
-    {\tiny Von User:JoJan - Eigenes Werk, CC BY-SA 3.0, 
-     \url{https://commons.wikimedia.org/w/index.php?curid=408982}
-     \url{https://commons.wikimedia.org/wiki/File:Galileo_Galilei_2.jpg}}
-  }\hspace{\stretch{1}}\parbox[t]{0.69\linewidth}{
-  \adSTField[]{Galileo Galilei} f\"uhrte \adSTField[]{falsifizierbare} 
-    Experimente ein, und begr\"undet damit die \adSTField[]{moderne 
-    Naturwissenschaft}.
-  \pause
-  Aus einer \adSTField[2]{Behauptung} (Hypothese) wird ein
-  \adSTField[2]{Experiment} abgeleitet, das die Hypothese
-  \adSTField[2]{widerlegen} (falsifizieren) kann.\pause{} Wird durch 
-  Experimente die Hypothese nicht widerlegt, so ist sie
-  \adSTField[2]{best\"atigt}, aber nicht bewiesen, und wird 
-  zu einer \adSTField[2]{Theorie} erhoben. 
-  \pause 
-  Von Galileo Galilei stammt auch der Ausspruch:
-  \pause
-  \begin{quote}
-    {Alles, was messbar ist, messen, \\
-    alles was nicht messbar ist, 
-    messbar machen.}
-  \end{quote}
-  \pause 
-  Nach \adSTField[1]{Sir Karl Raimund Popper} ist eine Theorie nur dann
-  \adSTField[1]{wissenschaftlich}, wenn sie \adSTField[1]{falsifizierbar} ist.
- }
+  \begin{block}{Beispiele, \"Ubungen: Wieviele Sekunden hat ein Jahr?}
+    \pause
+    Ein Tag hat \adSTField[2]{24 Stunden},eine \adSTField[2]{Stunde} hat 
+    60 \adSTField[2]{Minuten}, eine Minute \adSTField[2]{60 Sekunden}.
+    \pause\\
+    Zun\"achst eine Absch\"atzung:
+    \pause\\
+    Eine Stunde hat \adSTField[2]{$60 \cdot 60$} \pause $= 3600$ Sekunden, \pause
+    ein Tag in etwa \adSTField[2]{$25 \cdot 4000 = 25 \cdot 4 \cdot 10^3$} \pause 
+    $\approx 100 \cdot 10^3 = 100\,000$ Sekunden.\pause 
+    Ein Jahr hat etwa \adSTField[2]{$350 \cdot 100\,000 = 3.5 \cdot 10^2 \cdot 10^5$} \pause 
+    $\approx 3.5 \cdot 10^7 =35\,000\,000$ Sekunden.
+    \pause\\
+    Mit dem Taschenrechner erhalten wir \adSTField[2]{$365 \cdot 24 \cdot 60 \cdot 60$} \pause 
+    $= 365 \cdot 86\,400$ \pause $= 31\,536\,000$ Sekunden.
+  \end{block}
+  %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+  \begin{block}{Beispiele, \"Ubungen: Wie lang ist ein Lichtjahr?}
+    \pause
+    Das Licht legt in einer Sekunde \adSTField[2]{299\,792\,458 Meter} 
+    ($\approx$ 300\,000 km) zur\"uck. \pause Ein Jahr hat \adSTField[2]{$3.15 \cdot 10^7$ Sekunden}.
+    \pause\\
+    Zun\"achst eine Absch\"atzung:
+    \pause
+    1 ly $\approx 3 \cdot 10^8 \cdot 3 \cdot 10^7$ m \pause $= 9 \cdot 10^{15}$ m.
+    \pause\\
+    Mit dem Taschenrechner erhalten wir \adSTField[2]{$299\,792\,458 \cdot 31\,536\,000$} \pause 
+    $=9\,460\,730\,472\,580\,800$ Meter.
+  \end{block}
   %%= = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
 \end{frame}
 %==============================================================================
