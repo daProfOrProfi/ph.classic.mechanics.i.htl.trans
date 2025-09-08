@@ -5,12 +5,12 @@
 % % \documentclass[fleqn,11pt,article,aspectratio=43]{beamer}
 % % \documentclass[fleqn,11pt,handout,aspectratio=43]{beamer}
 % \documentclass[fleqn,11pt,trans,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue}]{beamer}
-\documentclass[fleqn,11pt,beamer,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
-% \documentclass[fleqn,11pt,handout,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
+% \documentclass[fleqn,11pt,beamer,aspectratio=43,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
+\documentclass[fleqn,11pt,handout,hyperref={colorlinks = true,linkcolor = blue,urlcolor=red!30!black}]{beamer}
 \def\adVers{202509.v.0.01}
 \newif\ifteacher
-\teachertrue
-% \teacherfalse
+% \teachertrue
+\teacherfalse
 
 \newif\iflong
 
@@ -39,13 +39,14 @@
 {
 %  \usetheme{Warsaw}
 %  \usetheme{Antibes}
-  \usetheme[secheader]{Madrid}
+% \usetheme[secheader]{Madrid}
+\usetheme[]{Madrid}
 % AnnArbor
 % Antibes
 % Bergen
 % Berkeley
 % Berlin
-% Boadilla
+% \usetheme[Boadilla}
 % boxes
 % CambridgeUS
 % Copenhagen
@@ -72,9 +73,15 @@
   \setbeamercovered{transparent}
   \setbeamertemplate{blocks}[default]
   % or whatever (possibly just delete it)
+  \usecolortheme{seahorse}%%
 }
 
-\usecolortheme{seahorse}%%
+\mode<handout>{
+  \usetheme{default}
+  \usecolortheme{dove}
+  %   \setbeamercolor{background canvas}{bg=white}%black!5}
+}
+  
 \title[Physik: klassische Mechanik] % (optional, use only with long paper titles)
 {Physik: klassische Mechanik}
 
@@ -112,6 +119,30 @@
 
 \usepackage[ngerman,english]{babel}
 % or whatever
+\usepackage[
+    style=alphabetic,
+%     style=authoryear,
+    % refsegment=chapter,
+    refsegment=section,
+%     refsection=chapter,
+    backend=biber,
+    hyperref=true
+    ]{biblatex}
+% \defbibheading{subbibliography}{\vspace{-0.5\baselineskip}}
+% \defbibheading{onlinesources}{\section*{Online Sources}}
+% \defbibheading{printedsources}{\section*{Printed Sources}}
+\defbibheading{subbib}{\section*{References}}
+%%linebreak in urls
+\setcounter{biburlnumpenalty}{9000}
+\setcounter{biburlucpenalty}{9000}
+\setcounter{biburllcpenalty}{9000}
+
+\addbibresource{./bibbook/ph.bib}
+\renewcommand*{\citesetup}{%
+  \scriptsize
+  \biburlsetup
+  \frenchspacing}
+
 
 % \usepackage[latin1]{inputenc}
 \usepackage[utf8]{inputenc}
@@ -181,9 +212,6 @@
 % \pgfpagesuselayout{resize to}[a4paper,border shrink=5mm,landscape]
 % \pgfpagesuselayout{4 on 1}[a4paper,border shrink=5mm,landscape]
 \mode<handout>{
-  \usetheme{default}
-  \usecolortheme{dove}
-%   \setbeamercolor{background canvas}{bg=white}%black!5}
   \pgfpagesuselayout{2 on 1}[a4paper,border shrink=2mm]
 %   \pgfpagesuselayout{4 on 1}[a4paper,border shrink=4mm,landscape]
 }
@@ -513,20 +541,20 @@
 %%student/teacher field
 %%==============================================================================
 \newcommand{\adSTField}[2][1.0]{%%[scale] value
-\ifteacher
-  {#2}
-\else
-  {\fbox{\phantom{{#2}}}}
-\fi
+\ifteacher{}%%
+  {#2}%%
+\else{}%%
+  {\fbox{\phantom{{#2}}}}%%
+\fi{}%%
 }
 %%==============================================================================
 %%==============================================================================
 \newcommand{\adSTFieldm}[2][1.0]{%%[scale] value
-\ifteacher
-  {#2}
-\else
-  {\fbox{\phantom{{$#2$}}}}
-\fi
+\ifteacher{}%%
+  {$#2$}%%
+\else{}%%
+  {\fbox{\phantom{{$#2$}}}}%%
+\fi{}%%
 }
 %%==============================================================================
 
@@ -544,7 +572,7 @@
 \rule[-0.04mm]{\paperwidth}{0.1mm}
 }
 \put(0,-39.1){%
-{\color{white}\fontsize{0.1mm}{0.2mm}\selectfont\adVers \textcopyright{}ad7}
+{\color{white}\fontsize{0.1mm}{0.2mm}\selectfont\adVers \textcopyright{}ad7@gmx.at}
 }
 }
 
@@ -625,6 +653,7 @@
 %   \titlepage
 % \end{frame}
 
+\include{chapter/00.intro/ch.00.00.Frontmatter.tex}
 \begin{frame}
   \frametitle{Outline}
   \tableofcontents
@@ -651,7 +680,10 @@
 
 
 % \include{}
-\include{chapter/00.intro/ch.00.Intro.tex}
+\include{chapter/00.intro/ch.00.01.Intro.tex}
+\include{chapter/00.intro/ch.00.02.units.tex}
+% \include{chapter/00.intro/ch.00.02.BasicPrinciples.tex}
+\endrefsegment
 
 % \include{chapter/ch01/prob.ch01.01.basics}
 % \include{chapter/ch02/prob.ch02.prob.measure.01.intro}
